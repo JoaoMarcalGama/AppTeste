@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="XamarinForms\Expander\ExpanderListView2\ExpanderListView2.xaml.cs" />
+    <Compile Remove="XamarinForms\Expander\ExpanderListView\Expander_ListView.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="XamarinForms\Expander\ExpanderListView2\ExpanderListView2.xaml" />
+    <EmbeddedResource Remove="XamarinForms\Expander\ExpanderListView\Expander_ListView.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="XamarinForms\Expander\ExpanderListView2\ExpanderListView2.xaml.cs">
+      <DependentUpon>ExpanderListView2.xaml</DependentUpon>
+    </Content>
+    <None Include="XamarinForms\Expander\ExpanderListView\Expander_ListView.xaml.cs">
+      <DependentUpon>Expander_ListView.xaml</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="XamarinForms\Expander\ExpanderListView2\ExpanderListView2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AppBase\Main.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="XamarinForms\Calculadora\Calculadora.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="XamarinForms\Expander\ExpanderListView\Expander_ListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="XamarinForms\Expander\ListaExpander.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="XamarinForms\ExtendedListView\ExtendedListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="XamarinForms\Telefone\Abas.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
